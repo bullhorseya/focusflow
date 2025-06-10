@@ -1,0 +1,262 @@
+html,
+body {
+  font-family: Inter, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  font-weight: 400;
+  letter-spacing: -0.01em;
+  background-color: #111111;
+  color: #ffffff;
+  min-height: 100vh;
+  margin: 0;
+  padding: 0;
+}
+
+::selection {
+  background: white;
+  color: #111111;
+  text-shadow: none;
+  /* Отключает существующие тени */
+}
+
+body {
+  padding-top: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Основные блоки */
+.aside,
+.main {
+  height: 400px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+/* Стили задач */
+.task-title {
+  font-weight: 400;
+  padding-top: 5px;
+  color: #fff;
+  transition: opacity 0.3s;
+}
+
+.task-title--done {
+  text-decoration: line-through;
+  color: #666;
+  opacity: 0.5;
+}
+
+.task-item {
+  background-color: #1a1a1a;
+  border-bottom: 1px solid #2c2c2c;
+  padding: 12px 16px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  transition: background-color 0.2s ease;
+}
+
+.task-item:hover {
+  background-color: #2a2a2a;
+}
+
+/* Кнопки */
+.task-item__buttons {
+  display: flex;
+  column-gap: 8px;
+}
+
+.btn-action {
+  background-color: transparent;
+  padding: 6px;
+  border: 1px solid #333;
+  border-radius: 6px;
+  cursor: pointer;
+  transition: all 0.2s ease;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-action:hover {
+  background-color: #333;
+}
+
+/* Иконки */
+.btn-action img {
+  width: 18px;
+  height: 18px;
+  pointer-events: none;
+}
+
+/* Галочка */
+.btn-action[data-action="done"] img {
+  filter: none;
+  /* Цвет задаётся в SVG */
+}
+
+/* Крестик */
+.btn-action[data-action="delete"] img {
+  filter: none;
+  /* Цвет задаётся в SVG */
+}
+
+/* Пустой список */
+.empty-list {
+  height: 65vh;
+  background-color: #1a1a1a;
+  border: 1px dashed #333;
+  border-radius: 8px;
+  padding: 32px;
+  margin-bottom: 16px;
+  text-align: center;
+  color: #666;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* 🔥 Добавьте эту строку */
+}
+
+.empty-list__title {
+  font-size: 20px;
+  font-weight: 400;
+  margin-top: 12px;
+  color: #888;
+}
+
+.empty-list__icon {
+  color: #888;
+  width: 48px;
+  height: 48px;
+  opacity: 0.5;
+}
+
+.copyright {
+  margin-top: 40px;
+  font-size: 14px;
+  color: #888;
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* Утилиты */
+.none {
+  display: none !important;
+}
+
+.float-right {
+  float: right;
+}
+
+/* Bootstrap card и формы */
+.card {
+  background-color: #1e1e1e !important;
+  border: 1px solid #2c2c2c !important;
+  border-radius: 8px;
+}
+
+.card-header {
+  background-color: #1e1e1e !important;
+  color: #ffffff;
+  border-bottom: 1px solid #333 !important;
+}
+
+.card-body {
+  color: #ccc;
+}
+
+.form-control {
+  background-color: #111 !important;
+  border: 1px solid #333 !important;
+  color: #fff !important;
+  box-shadow: none !important;
+}
+
+.form-control:focus {
+  background-color: #111 !important;
+  border-color: #555 !important;
+  color: #fff !important;
+  box-shadow: 0 0 0 1px #555 !important;
+}
+
+.btn-primary {
+  background-color: #1a1a1a;
+  border: 1px solid #333;
+  color: #fff;
+  font-weight: 500;
+  font-size: 15px;
+  padding: 10px 20px;
+  border-radius: 6px;
+  transition: background-color 0.2s ease-in-out, border-color 0.2s;
+  box-shadow: none;
+}
+
+.btn-primary:hover {
+  background-color: #2a2a2a;
+  border-color: #444;
+  color: #fff;
+}
+
+button:focus-visible {
+  outline: none;
+}
+
+.btn-primary:active {
+  background-color: #2a2a2a;
+  /* Или любое нужное тебе */
+  border-color: #444;
+  color: #fff;
+  outline: none;
+  box-shadow: none;
+}
+
+.btn-secondary {
+  background-color: #333;
+  border-color: #444;
+}
+
+.btn-secondary:hover {
+  background-color: #444;
+  border-color: #555;
+}
+#tasksList {
+  max-height: 59vh;
+  overflow-y: auto;
+}
+#tasksList::-webkit-scrollbar {
+  width: 6px;
+}
+
+#tasksList::-webkit-scrollbar-thumb {
+  background-color: #444;
+  border-radius: 3px;
+}
+
+#tasksList::-webkit-scrollbar-track {
+  background-color: #1a1a1a;
+}
+.copyright a {
+  background: linear-gradient(90deg,
+    #f06419,
+    #e27aff,
+    #29ffbf);
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    font-weight: bold;
+}
+
+.btn-primary:active,
+.btn-primary.active,
+.btn-primary:focus,
+.btn-primary:active:focus,
+.show>.btn-primary.dropdown-toggle {
+  background-color: #2a2a2a !important;
+  border-color: #444 !important;
+  color: #fff !important;
+  box-shadow: none !important;
+  outline: none !important;
+}
